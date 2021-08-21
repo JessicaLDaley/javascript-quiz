@@ -12,11 +12,50 @@ var minutes ;
 var seconds ;
 var timeDock = 0;
 var timer;
-  // Find the distance between now and the count down date
-  var distance;
-  // var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
+var score = 0;
+var highScore = localStorage.getItem("highScore");
+var distance;
 
-// Update the count down every 1 second
+// ("click",hideshow,false);
+// function hideshow(){
+//   document.getElementById("form").style.display = "block";
+//   this.style.display = "none"
+// }
+
+
+var question = [
+  {
+
+
+      
+
+      "question":" What JavaScript syntax creates, or declares, a new variable?",
+      "answer":"var",
+      "choice1":"script",
+      "choice2":"console",
+      "choice3":"varb",
+      "choice4":"var"
+  
+  },
+  {
+      "question":"What's the difference between ' == ' and ' === ' operators?",
+      "answer":"'==' is used to compare values whereas, ' === ' is used to compare both value and types.",
+      "choice1":"'==' compairs both value and types, whereas, === is used to compare.",
+      "choice2":"'==' returns value twice, whereas, '===' returns value three times.",
+      "choice3":"They do the exact same thing",
+      "choice4":"'==' is used to compare values whereas, ' === ' is used to compare both value and types."
+  },
+      
+      {
+      "question":"What symbol asigns a value to a variable?",
+      "answer":"=",
+      "choice1":"+",
+      "choice2":"=",
+      "choice3":"$",
+      "choice4":";",
+    } ]
+    
+
 function updateTime() {
 
   // Get today's date and time
@@ -33,16 +72,27 @@ function updateTime() {
   document.getElementById("timer").innerHTML = minutes + "m " + seconds + "s ";
 
   // trigger end of array to clearInterval
-    console.log(distance)
+  //  console.log(distance)
   // If the count down is over, write some text 
   if (distance < 0 || questionIndex >= question.length){
+    score = seconds;
     clearInterval(timer);
+    //document.getElementById("form").style.visibility = "visible";
+    document.getElementById("form").style.display = "block";
+    console.log("your score is "+score)
     //document.getElementById("timer").innerHTML = "";
-    
-  
+    if (highScore !== null){
+      if(score > parseInt(highScore)){
+        localStorage.setItem("highScore", JSON.stringify(score));
 
+       
+      }
+    }
   }
+  
+  
 }
+
 
 
 function checkAnswer() {
@@ -61,8 +111,8 @@ if (question[questionIndex].answer === choice) {console.log("that is correct!");
 // decrement counter on wrong answer clicks
   console.log("you picked answer number "+this.id)
   questionIndex++;
-
-  updateQuestion(questionIndex);
+  if(questionIndex < question.length) {
+    updateQuestion(questionIndex);}
  
 
 
@@ -73,6 +123,9 @@ function updateQuestion (element){
   // IF QuestionIndex !== 0 then delete buttons
   // Grab all current buttons by their ID
   // Remove each button
+
+  console.log("inside update question")
+
   if(questionIndex !== 0) {
     const answerButtons = document.getElementsByClassName("answer-btn")
 
@@ -85,7 +138,9 @@ function updateQuestion (element){
   timer = setInterval(function(){updateTime()},1000);
 
   }
-  document.getElementById("?").innerHTML = question[element].question;
+
+  if(questionIndex <= question.length) {
+    document.getElementById("?").innerHTML = question[element].question;}
  
 
   // buttons 
@@ -117,7 +172,7 @@ function updateQuestion (element){
   choiceFourBtn.innerHTML = question[element].choice4;
   document.body.appendChild(choiceFourBtn);
   
-  // UPDATE DOCUMENT INNER HTML WITH QUESTION TEXT
+
   
  
   
@@ -137,6 +192,7 @@ var start = document.getElementById("start-button").addEventListener("click",hid
 function hideshow(){
   document.getElementById("hidden-div").style.display = "block";
   this.style.display = "none"
+
   /*hideInsructions = document.getElementById("instructions");
   if(hideInstructions.style.display === "none"){
     hideInsructions.style.display = "block";
@@ -152,35 +208,6 @@ document.querySelector('#start-button').onclick = function(){
 };
 
 
-//change this yes or no question to have four options
-var question = [
-{
-    "question":" What JavaScript syntax creates, or declares, a new variable?",
-    "answer":"var",
-    "choice1":"script",
-    "choice2":"console",
-    "choice3":"varb",
-    "choice4":"var"
-
-},
-{
-    "question":"What's the difference between ' == ' and ' === ' operators?",
-    "answer":"'==' is used to compare values whereas, ' === ' is used to compare both value and types.",
-    "choice1":"'==' compairs both value and types, whereas, === is used to compare.",
-    "choice2":"'==' returns value twice, whereas, '===' returns value three times.",
-    "choice3":"They do the exact same thing",
-    "choice4":"'==' is used to compare values whereas, ' === ' is used to compare both value and types."
-},
-    
-    {
-    "question":"What symbol asigns a value to a variable?",
-    "answer":"=",
-    "choice1":"+",
-    "choice2":"=",
-    "choice3":"$",
-    "choice4":";",
-  } ]
-  
    
 
   

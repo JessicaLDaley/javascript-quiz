@@ -8,3 +8,33 @@
     width:100%;
     position: relative;
 }
+h1{
+    text-align: center;
+    margin-bottom:40px;
+}
+body{
+    margin-top:20%;
+    
+}
+.answer-btn{
+    background-color: rgb(49, 4, 87);
+    color:white;
+    margin:auto;
+    display: flex;
+    display:grid;
+    text-align: center;
+    margin-top:10px;
+
+}
+#initialButton {
+    background-color: rgb(49, 4, 87);
+    color:white;
+
+}
+#start-button{
+    background-color: rgb(49, 4, 87);
+    color:white;
+}
+form{
+    display: none;
+}
