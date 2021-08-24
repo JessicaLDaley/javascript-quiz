@@ -1,0 +1,102 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.intro{
+    text-align:center;
+    width:100%;
+    position: relative;
+}
+h1{
+    text-align: center;
+    margin-bottom:40px;
+}
+body{
+    margin-top:20%;
+    margin-left:10%;
+    
+}
+.answer-btn{
+    background-color: rgb(49, 4, 87);
+    color:white;
+    margin:auto;
+    display: flex;
+    display:grid;
+    text-align: center;
+    margin-top:10px;
+    width:500px;
+    height:60px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding-top:8px;
+    
+    
+
+}
+#initialButton {
+    background-color: rgb(49, 4, 87);
+    color:white;
+
+}
+#start-button{
+    background-color: rgb(49, 4, 87);
+    color:white;
+    width:200px;
+    height:30px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin:10px;
+}
+form{
+    display: none;
+}
+#timer{
+float:right;
+display:flex;
+text-align: center;
+padding-bottom:90%;
+margin-right:10%;
+font-size: 20px;
+
+
+}
+p{
+    font-size: 20px;
+}
+#instructions{
+    text-align: center;
+    font-weight: lighter;
+    font-size:30px;
+ 
+}
+#initial-button{
+    background-color: rgb(49, 4, 87);
+    color:white;
+    width:200px;
+    height:30px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin:10px;
+}
+#initials{
+    width:200px;
+    height:30px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+label{
+    font-size: 30px;
+}
+#ask{
+    font-size: 40px;
+    font-weight: bold;
+}
+#scores {
+    text-align: center;
+    background-color: rgb(126, 93, 170);
+
+}
+a{
+    color:rgb(163, 123, 196);
+}
